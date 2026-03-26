@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rise of the Crescent — From Revelation to Empire. Explore the legacy of Islamic Civilization, the Golden Age, and the great Caliphates that shaped world history.">
+<meta name="keywords" content="Islamic Golden Age, Caliphates, Ottoman Empire, Abbasid, Umayyad, Rashidun, Islamic history">
+<title>Rise of the Crescent — From Revelation to Empire</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   CSS VARIABLES & ROOT
+============================================ */
+:root {
+  --bg-primary: #050d08;
+  --bg-secondary: #081510;
+  --bg-card: #0a1a10;
+  --bg-card-hover: #0f2318;
+  --emerald-deep: #0d2818;
+  --emerald-mid: #1a4a2e;
+  --emerald-bright: #2d7a4f;
+  --emerald-light: #3da86a;
+  --gold: #C9A55A;
+  --gold-light: #e8c87e;
+  --gold-pale: #f5e4b8;
+  --gold-dark: #8a6d35;
+  --text-primary: #f0e8d4;
+  --text-secondary: #c8b89a;
+  --text-muted: #7a6a52;
+  --border-gold: rgba(201, 165, 90, 0.3);
+  --border-emerald: rgba(45, 122, 79, 0.3);
+  --glow-gold: rgba(201, 165, 90, 0.4);
+  --glow-emerald: rgba(45, 122, 79, 0.3);
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'EB Garamond', serif;
+  --font-arabic: 'Amiri', serif;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================
+   RESET & BASE
+============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   SCROLL PROGRESS BAR
+============================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--emerald-bright), var(--gold), var(--emerald-bright));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px var(--glow-gold);
+}
+
+/* ============================================
+   ISLAMIC GEOMETRIC SVG PATTERN
+============================================ */
+.geo-pattern {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cdefs%3E%3Cpattern id='geo' x='0' y='0' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23C9A55A' stroke-width='0.8'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30 Z' fill='none' stroke='%23C9A55A' stroke-width='0.5'/%3E%3Cpath d='M0 0 L30 30 M60 0 L30 30 M0 60 L30 30 M60 60 L30 30' stroke='%23C9A55A' stroke-width='0.4' fill='none'/%3E%3Ccircle cx='30' cy='30' r='5' fill='none' stroke='%23C9A55A' stroke-width='0.5'/%3E%3Ccircle cx='0' cy='0' r='3' fill='none' stroke='%23C9A55A' stroke-width='0.4'/%3E%3Ccircle cx='60' cy='0' r='3' fill='none' stroke='%23C9A55A' stroke-width='0.4'/%3E%3Ccircle cx='0' cy='60' r='3' fill='none' stroke='%23C9A55A' stroke-width='0.4'/%3E%3Ccircle cx='60' cy='60' r='3' fill='none' stroke='%23C9A55A' stroke-width='0.4'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='120' height='120' fill='url(%23geo)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   NAVIGATION
+============================================ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(5,13,8,0.95) 0%, rgba(5,13,8,0) 100%);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,165,90,0.1);
+  transition: var(--transition);
+}
+
+nav.scrolled {
+  background: rgba(5,13,8,0.97);
+  border-bottom-color: rgba(201,165,90,0.25);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 20px var(--glow-gold);
+}
+
+.nav-logo span { color: var(--emerald-light); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-actions { display: flex; gap: 1rem; align-items: center; }
+
+#dark-toggle {
+  background: none;
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  transition: var(--transition);
+}
+
+#dark-toggle:hover {
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px; height: 2px;
+  background: var(--gold);
+  transition: var(--transition);
+}
+
+/* ============================================
+   HERO SECTION
+============================================ */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(13,40,24,0.9) 0%, transparent 70%),
+    radial-gradient(ellipse 100% 100% at 50% 100%, rgba(5,13,8,1) 0%, transparent 60%),
+    linear-gradient(180deg, #050d08 0%, #0a1e12 40%, #081510 100%);
+  z-index: 1;
+}
+
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--gold-pale);
+  border-radius: 50%;
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: var(--opacity, 0.6);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--opacity, 0.6); transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(0.5); }
+}
+
+/* Crescent Moon */
+.crescent-container {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: moonFloat 6s ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+.crescent {
+  width: 120px; height: 120px;
+  position: relative;
+}
+
+.crescent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow:
+    0 0 40px 15px rgba(201,165,90,0.5),
+    0 0 80px 30px rgba(201,165,90,0.2),
+    0 0 120px 60px rgba(201,165,90,0.1);
+}
+
+.crescent::after {
+  content: '';
+  position: absolute;
+  top: -8px; right: -15px;
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: #071010;
+  box-shadow: -5px 0 20px rgba(201,165,90,0.3);
+}
+
+.crescent-star {
+  position: absolute;
+  top: 15px; right: -30px;
+  width: 14px; height: 14px;
+  z-index: 3;
+}
+
+.crescent-star::before, .crescent-star::after {
+  content: '★';
+  position: absolute;
+  color: var(--gold);
+  font-size: 14px;
+  top: 0; left: 0;
+  animation: starGlow 2s ease-in-out infinite;
+}
+
+@keyframes starGlow {
+  0%, 100% { text-shadow: 0 0 5px var(--gold), 0 0 15px var(--glow-gold); }
+  50% { text-shadow: 0 0 15px var(--gold), 0 0 30px var(--glow-gold), 0 0 50px rgba(201,165,90,0.3); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin-top: 120px;
+}
+
+.hero-bismillah {
+  font-family: var(--font-arabic);
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s ease 0.2s both;
+  text-shadow: 0 0 30px var(--glow-gold);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s ease 0.4s both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s ease 0.6s both;
+}
+
+.hero-title .gold { color: var(--gold); text-shadow: 0 0 40px var(--glow-gold); }
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  animation: fadeUp 1s ease 0.8s both;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  animation: fadeUp 1s ease 1s both;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.hero-cta:hover { color: var(--bg-primary); box-shadow: 0 0 30px var(--glow-gold); }
+.hero-cta:hover::before { transform: translateX(0); }
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeUp 1s ease 1.5s both;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.scroll-text {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   SECTION COMMON STYLES
+============================================ */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::before, .section-label::after {
+  content: '';
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--emerald-mid));
+}
+
+.section-label::after {
+  background: linear-gradient(270deg, transparent, var(--emerald-mid));
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-title .gold { color: var(--gold); text-shadow: 0 0 30px rgba(201,165,90,0.3); }
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gold-divider::before, .gold-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.gold-divider::after {
+  background: linear-gradient(270deg, transparent, var(--gold));
+}
+
+.gold-divider .diamond {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--glow-gold);
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ============================================
+   INTRO SECTION
+============================================ */
+#intro {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.intro-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.intro-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.intro-quote {
+  border-left: 2px solid var(--gold);
+  padding: 1rem 1.5rem;
+  font-style: italic;
+  color: var(--gold-pale);
+  font-family: var(--font-arabic);
+  font-size: 1.2rem;
+  background: rgba(201,165,90,0.05);
+  margin: 1.5rem 0;
+}
+
+.intro-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ornament-circle {
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: rotateSlow 30s linear infinite;
+}
+
+.ornament-circle::before {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--border-emerald);
+  animation: rotateSlow 20s linear infinite reverse;
+}
+
+.ornament-circle::after {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,165,90,0.15);
+}
+
+@keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.ornament-center {
+  font-family: var(--font-arabic);
+  font-size: 4rem;
+  color: var(--gold);
+  text-shadow: 0 0 40px var(--glow-gold);
+  animation: rotateSlow 30s linear infinite reverse;
+  line-height: 1;
+}
+
+/* Timeline */
+.timeline-section { margin-top: 3rem; }
+
+.timeline-track {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--gold), var(--emerald-bright), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.timeline-item.visible { opacity: 1; }
+
+.timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; }
+.timeline-item:nth-child(odd) .timeline-date { grid-column: 2; }
+.timeline-item:nth-child(odd) .timeline-empty { grid-column: 3; }
+
+.timeline-item:nth-child(even) .timeline-empty { grid-column: 1; }
+.timeline-item:nth-child(even) .timeline-date { grid-column: 2; }
+.timeline-item:nth-child(even) .timeline-content { grid-column: 3; text-align: left; }
+
+.timeline-date {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--emerald-deep);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: var(--gold);
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(201,165,90,0.15);
+  flex-shrink: 0;
+}
+
+.timeline-date .year { font-size: 1rem; font-weight: 600; }
+
+.timeline-content h4 {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   CALIPHATE SECTIONS
+============================================ */
+.caliphate-section {
+  padding: 5rem 2rem;
+}
+
+.caliphate-section:nth-child(odd) {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.caliphate-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.caliphate-era {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 0.5rem;
+}
+
+.caliphate-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.caliphate-title .gold { color: var(--gold); }
+
+.caliphate-dates {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.2em;
+}
+
+.caliphate-meta {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-label {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.meta-value {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--gold);
+}
+
+/* Expandable Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.expand-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.expand-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(201,165,90,0.1), 0 10px 40px rgba(0,0,0,0.4);
+  transform: translateY(-3px);
+}
+
+.card-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-icon {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(201,165,90,0.1);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--gold);
+  flex: 1;
+}
+
+.card-toggle {
+  width: 24px; height: 24px;
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--gold);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.expand-card.open .card-toggle { transform: rotate(45deg); }
+
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.card-body.open {
+  max-height: 400px;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.card-body p, .card-body li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.card-body ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.card-body li { margin-bottom: 0.3rem; }
+
+.achievement-tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: rgba(45,122,79,0.15);
+  border: 1px solid var(--border-emerald);
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: var(--emerald-light);
+  margin: 0.2rem;
+}
+
+/* ============================================
+   GOLDEN AGE SECTION
+============================================ */
+#golden-age {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #071510 50%, var(--bg-primary) 100%);
+}
+
+.golden-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.house-wisdom {
+  background: linear-gradient(135deg, rgba(13,40,24,0.8), rgba(5,13,8,0.9));
+  border: 1px solid var(--border-gold);
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.house-wisdom::before {
+  content: '⬡';
+  position: absolute;
+  top: -1px; left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 1.2rem;
+  background: var(--bg-primary);
+  padding: 0 0.5rem;
+}
+
+.house-wisdom .title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.house-wisdom .subtitle {
+  font-family: var(--font-arabic);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.house-wisdom p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.achievements-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.achievements-text p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+.scholars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.scholar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.scholar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.scholar-card:hover::before { transform: scaleX(1); }
+
+.scholar-card:hover {
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 40px rgba(201,165,90,0.12);
+  transform: translateY(-5px);
+}
+
+.scholar-icon {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald-deep), var(--emerald-mid));
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 20px rgba(201,165,90,0.2);
+}
+
+.scholar-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.scholar-field {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 0.8rem;
+}
+
+.scholar-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Science categories */
+.science-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.science-cat {
+  background: linear-gradient(135deg, rgba(13,40,24,0.5), rgba(5,13,8,0.8));
+  border: 1px solid var(--border-emerald);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.science-cat:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(45,122,79,0.15);
+}
+
+.science-cat .cat-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+.science-cat h4 {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.science-cat p { color: var(--text-muted); font-size: 0.88rem; }
+
+/* ============================================
+   LEADERS SECTION
+============================================ */
+#leaders {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.leaders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.leader-card {
+  perspective: 1000px;
+  height: 380px;
+  cursor: pointer;
+}
+
+.leader-card-inner {
+  position: relative;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.leader-card:hover .leader-card-inner,
+.leader-card.flipped .leader-card-inner {
+  transform: rotateY(180deg);
+}
+
+.leader-front, .leader-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid var(--border-gold);
+  overflow: hidden;
+}
+
+.leader-front {
+  background: linear-gradient(180deg, var(--emerald-deep) 0%, var(--bg-card) 100%);
+}
+
+.leader-back {
+  background: var(--bg-card);
+  transform: rotateY(180deg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leader-img-placeholder {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, var(--emerald-deep) 0%, rgba(13,40,24,0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  border-bottom: 1px solid var(--border-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.leader-img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, var(--bg-card) 100%);
+}
+
+.leader-front-info {
+  padding: 1.5rem;
+}
+
+.leader-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.leader-title-text {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 0.8rem;
+}
+
+.leader-era {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.leader-back h3 {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.leader-back .leader-title-text { margin-bottom: 1rem; }
+
+.leader-back p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.leader-achievement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.leader-achievement::before { content: '◆'; color: var(--gold); font-size: 0.5rem; }
+
+.flip-hint {
+  position: absolute;
+  bottom: 1rem; right: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   BATTLES SECTION
+============================================ */
+#battles {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(8,10,8,1) 100%);
+}
+
+.battle-slider {
+  position: relative;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.battle-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.battle-slide {
+  min-width: 100%;
+  padding: 0 1rem;
+}
+
+.battle-card {
+  background: linear-gradient(135deg, var(--emerald-deep), var(--bg-card));
+  border: 1px solid var(--border-gold);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.battle-year {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: rgba(201,165,90,0.15);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.battle-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.battle-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.battle-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-box {
+  background: rgba(5,13,8,0.6);
+  border: 1px solid var(--border-emerald);
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--emerald-light);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.battle-outcome {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--emerald-mid);
+  background: rgba(45,122,79,0.1);
+  color: var(--emerald-light);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.slider-btn {
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  background: var(--gold);
+  color: var(--bg-primary);
+  box-shadow: 0 0 20px var(--glow-gold);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--glow-gold);
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* ============================================
+   DECLINE SECTION
+============================================ */
+#decline {
+  background: linear-gradient(180deg, rgba(8,10,8,1) 0%, var(--bg-primary) 100%);
+}
+
+.decline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.decline-card {
+  background: linear-gradient(135deg, rgba(20,5,5,0.6), rgba(5,13,8,0.9));
+  border: 1px solid rgba(150,50,50,0.3);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.decline-card:hover {
+  border-color: rgba(201,165,90,0.4);
+  transform: translateY(-3px);
+}
+
+.decline-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, rgba(150,50,50,0.8), rgba(201,165,90,0.3));
+}
+
+.decline-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+.decline-card h4 {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.decline-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
+
+/* ============================================
+   HORIZONTAL TIMELINE
+============================================ */
+#timeline-section {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+#timeline-section .container { overflow: hidden; }
+
+.htimeline-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+
+.htimeline-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.htimeline-scroll {
+  overflow-x: auto;
+  padding: 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dark) var(--bg-primary);
+}
+
+.htimeline-scroll::-webkit-scrollbar { height: 4px; }
+.htimeline-scroll::-webkit-scrollbar-track { background: var(--bg-primary); }
+.htimeline-scroll::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+.htimeline-track {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  padding: 2rem 3rem;
+  position: relative;
+}
+
+.htimeline-track::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 5%, var(--emerald-bright) 50%, var(--gold) 95%, transparent 100%);
+  transform: translateY(-50%);
+}
+
+.ht-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+  position: relative;
+  cursor: default;
+}
+
+.ht-event:nth-child(odd) { flex-direction: column-reverse; }
+.ht-event:nth-child(odd) .ht-connector { order: 0; }
+
+.ht-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 10px var(--glow-gold);
+  z-index: 1;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.ht-event:hover .ht-dot {
+  transform: scale(1.5);
+  box-shadow: 0 0 20px var(--glow-gold);
+}
+
+.ht-connector {
+  width: 1px;
+  height: 30px;
+  background: var(--border-gold);
+}
+
+.ht-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  padding: 0.8rem 1rem;
+  text-align: center;
+  max-width: 140px;
+  transition: var(--transition);
+}
+
+.ht-event:hover .ht-content {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(201,165,90,0.15);
+}
+
+.ht-year {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.ht-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ============================================
+   GALLERY SECTION
+============================================ */
+#gallery {
+  background: var(--bg-primary);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  cursor: pointer;
+  group: true;
+}
+
+.gallery-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item:nth-child(4) { grid-column: span 2; }
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--emerald-deep), var(--bg-card));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: transform 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item:first-child .gallery-img { height: 400px; }
+.gallery-item:nth-child(4) .gallery-img { height: 200px; }
+
+.gallery-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--geo-pattern);
+  opacity: 0.1;
+}
+
+.gallery-item:hover .gallery-img { transform: scale(1.05); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(5,13,8,0.9) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-caption {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.gallery-caption span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+footer {
+  background: var(--emerald-deep);
+  border-top: 1px solid var(--border-gold);
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23C9A55A' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.footer-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  text-shadow: 0 0 30px var(--glow-gold);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.footer-quote {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  border: 1px solid var(--border-gold);
+  background: rgba(5,13,8,0.5);
+  position: relative;
+}
+
+.footer-quote::before {
+  content: '❝';
+  position: absolute;
+  top: -1rem; left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 1.5rem;
+  background: var(--emerald-deep);
+  padding: 0 0.5rem;
+}
+
+.footer-quote p {
+  font-family: var(--font-arabic);
+  font-size: 1.15rem;
+  color: var(--gold-pale);
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+}
+
+.footer-quote cite {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--emerald-light);
+  text-transform: uppercase;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.footer-nav a:hover { color: var(--gold); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border-gold);
+  padding-top: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   DARK MODE TOGGLE
+============================================ */
+body.light-mode {
+  --bg-primary: #f5f0e8;
+  --bg-secondary: #ede7d9;
+  --bg-card: #e8dfc8;
+  --bg-card-hover: #dfd4b8;
+  --text-primary: #1a0f05;
+  --text-secondary: #3a2a15;
+  --text-muted: #6a5035;
+  --border-gold: rgba(139, 90, 20, 0.35);
+  --border-emerald: rgba(20, 80, 40, 0.3);
+}
+
+/* ============================================
+   STATS BAR
+============================================ */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-gold);
+  margin: 3rem 0;
+  overflow: hidden;
+}
+
+.stat-item {
+  padding: 2rem;
+  text-align: center;
+  border-right: 1px solid var(--border-gold);
+  transition: var(--transition);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-item:hover { background: rgba(201,165,90,0.05); }
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  display: block;
+  text-shadow: 0 0 20px rgba(201,165,90,0.3);
+}
+
+.stat-desc {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* ============================================
+   MOBILE NAV
+============================================ */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,13,8,0.98);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.mobile-nav.open { display: flex; }
+
+.mobile-nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.mobile-nav a:hover { color: var(--gold); }
+
+.mobile-close {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  background: none;
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 1024px) {
+  .intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .ornament-circle { display: none; }
+  .golden-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .science-categories { grid-template-columns: 1fr 1fr; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .battle-card { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  nav { padding: 1rem 1.5rem; }
+
+  section { padding: 4rem 1.5rem; }
+
+  .timeline-track::before { left: 20px; }
+  .timeline-item { grid-template-columns: 40px 1fr; }
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content { grid-column: 2; text-align: left; }
+  .timeline-item:nth-child(odd) .timeline-date,
+  .timeline-item:nth-child(even) .timeline-date { grid-column: 1; }
+  .timeline-item:nth-child(odd) .timeline-empty,
+  .timeline-item:nth-child(even) .timeline-empty { display: none; }
+  .timeline-date { width: 40px; height: 40px; font-size: 0.55rem; }
+  .timeline-date .year { font-size: 0.7rem; }
+
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item:first-child { grid-column: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 2; }
+  .gallery-item:first-child .gallery-img { height: 250px; }
+
+  .science-categories { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+
+  .caliphate-meta { gap: 1.5rem; }
+
+  .hero-cta { padding: 0.8rem 2rem; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:first-child, .gallery-item:nth-child(4) { grid-column: span 1; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .crescent { width: 80px; height: 80px; }
+  .crescent::after { width: 73px; height: 73px; top: -5px; right: -10px; }
+  .hero-bismillah { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Geometric Pattern Background -->
+<div class="geo-pattern"></div>
+
+<!-- Mobile Navigation Overlay -->
+<nav id="mobile-nav" class="mobile-nav">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="#intro" onclick="closeMobileNav()">Introduction</a>
+  <a href="#rashidun" onclick="closeMobileNav()">Rashidun</a>
+  <a href="#umayyad" onclick="closeMobileNav()">Umayyad</a>
+  <a href="#abbasid" onclick="closeMobileNav()">Abbasid</a>
+  <a href="#ottoman" onclick="closeMobileNav()">Ottoman</a>
+  <a href="#golden-age" onclick="closeMobileNav()">Golden Age</a>
+  <a href="#leaders" onclick="closeMobileNav()">Leaders</a>
+  <a href="#battles" onclick="closeMobileNav()">Battles</a>
+  <a href="#timeline-section" onclick="closeMobileNav()">Timeline</a>
+</nav>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">Rise of the <span>Crescent</span></a>
+  <ul class="nav-links">
+    <li><a href="#intro">Origins</a></li>
+    <li><a href="#rashidun">Rashidun</a></li>
+    <li><a href="#abbasid">Abbasid</a></li>
+    <li><a href="#ottoman">Ottoman</a></li>
+    <li><a href="#golden-age">Golden Age</a></li>
+    <li><a href="#leaders">Leaders</a></li>
+    <li><a href="#battles">Battles</a></li>
+    <li><a href="#timeline-section">Timeline</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button id="dark-toggle">◐ Theme</button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO SECTION ============ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stars" id="stars-container"></div>
+
+  <!-- Crescent Moon -->
+  <div class="crescent-container">
+    <div class="crescent"></div>
+    <div class="crescent-star"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="hero-eyebrow">610 CE — 1924 CE · A Civilization Unmatched</div>
+    <h1 class="hero-title">
+      Rise of the<br><span class="gold">Crescent</span>
+    </h1>
+    <p class="hero-tagline">From Revelation to Empire — The Legacy of Islamic Civilization</p>
+    <a href="#intro" class="hero-cta">Explore the Golden Age</a>
+  </div>
+
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll to Begin</span>
+  </div>
+</section>
+
+<!-- ============ INTRODUCTION SECTION ============ -->
+<section id="intro">
+  <div class="container">
+    <div class="section-label">Origins of a Civilization</div>
+    <div class="gold-divider"><div class="diamond"></div></div>
+
+    <div class="intro-grid">
+      <div class="intro-text reveal-left">
+        <h2>The Dawn of a New Era</h2>
+        <p>In the year 610 CE, in the cave of Hira near Mecca, the Angel Jibreel appeared before the Prophet Muhammad ﷺ with the first words of Divine revelation: <em>Iqra</em> — "Read." From this singular moment emerged one of history's most transformative civilizations.</p>
+        <div class="intro-quote">
+          "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ"
+          <br><small style="color:var(--text-muted);font-size:0.8rem;font-family:var(--font-heading);letter-spacing:0.1em;">Read in the name of your Lord who created — Quran 96:1</small>
+        </div>
+        <p>Within a century of the Prophet's death, the Islamic world stretched from the Iberian Peninsula in the west to Central Asia in the east — a territorial expansion unparalleled in history. But land was merely the vessel; what the Muslims carried within was a civilization of unmatched intellectual, spiritual, and cultural brilliance.</p>
+      </div>
+      <div class="intro-visual reveal-right">
+        <div class="ornament-circle">
+          <div class="ornament-center">☪</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar reveal">
+      <div class="stat-item">
+        <span class="stat-number">1,300+</span>
+        <div class="stat-desc">Years of Islamic Caliphates</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15M+</span>
+        <div class="stat-desc">Sq. Miles at Peak (Ottoman)</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">800+</span>
+        <div class="stat-desc">Years of the Golden Age</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">1B+</span>
+        <div class="stat-desc">Preserved Ancient Manuscripts</div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-section">
+      <h3 style="font-family:var(--font-heading);color:var(--gold);text-align:center;font-size:1.1rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:3rem;">Key Milestones</h3>
+      <div class="timeline-track">
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>First Revelation</h4>
+            <p>The beginning of Islam in the Cave of Hira, Mecca</p>
+          </div>
+          <div class="timeline-date"><span class="year">610</span>CE</div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-empty"></div>
+          <div class="timeline-date"><span class="year">622</span>CE</div>
+          <div class="timeline-content">
+            <h4>The Hijra</h4>
+            <p>The Prophet's migration from Mecca to Medina — Year 1 of the Islamic calendar</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>Conquest of Mecca</h4>
+            <p>The peaceful liberation of Mecca — 10,000 Muslims march in</p>
+          </div>
+          <div class="timeline-date"><span class="year">630</span>CE</div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-empty"></div>
+          <div class="timeline-date"><span class="year">632</span>CE</div>
+          <div class="timeline-content">
+            <h4>Farewell Sermon</h4>
+            <p>The Prophet's last Hajj and passing, leaving a completed religion</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>Rashidun Caliphate</h4>
+            <p>The four rightly guided Caliphs rule over a rapidly expanding empire</p>
+          </div>
+          <div class="timeline-date"><span class="year">632</span>CE</div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-empty"></div>
+          <div class="timeline-date"><span class="year">750</span>CE</div>
+          <div class="timeline-content">
+            <h4>Abbasid Revolution</h4>
+            <p>The Abbasids overthrow the Umayyads — the Golden Age begins in Baghdad</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RASHIDUN CALIPHATE ============ -->
+<section id="rashidun" class="caliphate-section">
+  <div class="container">
+    <div class="caliphate-header reveal">
+      <div class="caliphate-era">First Caliphate · The Rightly Guided</div>
+      <h2 class="caliphate-title">The <span class="gold">Rashidun</span> Caliphate</h2>
+      <div class="caliphate-dates">632 CE — 661 CE</div>
+      <div class="gold-divider"><div class="diamond"></div></div>
+      <div class="caliphate-meta">
+        <div class="meta-item"><span class="meta-label">Founder</span><span class="meta-value">Abu Bakr as-Siddiq</span></div>
+        <div class="meta-item"><span class="meta-label">Capital</span><span class="meta-value">Medina</span></div>
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">29 Years</span></div>
+        <div class="meta-item"><span class="meta-label">Caliphs</span><span class="meta-value">4</span></div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">📖</div>
+          <div class="card-title">Overview & Founding</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>The Rashidun ("Rightly Guided") Caliphate followed the Prophet Muhammad ﷺ. Led by the four Companions — Abu Bakr, Umar, Uthman, and Ali — this caliphate was renowned for its just governance, piety, and remarkable territorial expansion. In just 29 years, it unified Arabia and stretched into Persia, Egypt, Syria, and Iraq.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">⚔️</div>
+          <div class="card-title">Major Expansions & Battles</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Battle of Yarmouk (636 CE)</strong> — Decisive defeat of the Byzantine army</li>
+            <li><strong>Battle of Qadisiyyah (637 CE)</strong> — Conquest of the Sassanid Persian Empire</li>
+            <li><strong>Conquest of Jerusalem (638 CE)</strong> — Umar ibn al-Khattab enters in humility</li>
+            <li><strong>Conquest of Egypt (639–641 CE)</strong> — Amr ibn al-As leads the campaign</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">✨</div>
+          <div class="card-title">Golden Achievements</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>The Rashidun era set standards of governance unmatched for centuries:</p>
+          <div style="margin-top:0.8rem">
+            <span class="achievement-tag">Quran Compilation</span>
+            <span class="achievement-tag">Welfare State</span>
+            <span class="achievement-tag">Just Taxation</span>
+            <span class="achievement-tag">Religious Tolerance</span>
+            <span class="achievement-tag">Shura Council</span>
+          </div>
+          <p style="margin-top:0.8rem">Umar introduced the first welfare state, disability benefits, and a sophisticated administrative system for the conquered territories.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">⚖️</div>
+          <div class="card-title">Reason for Decline</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>Internal political tensions culminated in the assassination of both Uthman (656 CE) and Ali (661 CE). The First Fitna (civil war) between the partisans of Ali and Muawiyah fractured the unified leadership, leading to the establishment of the Umayyad dynasty with hereditary rule replacing consultation-based selection.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ UMAYYAD CALIPHATE ============ -->
+<section id="umayyad" class="caliphate-section" style="background:linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+  <div class="container">
+    <div class="caliphate-header reveal">
+      <div class="caliphate-era">Second Caliphate · The Arab Kingdom</div>
+      <h2 class="caliphate-title">The <span class="gold">Umayyad</span> Caliphate</h2>
+      <div class="caliphate-dates">661 CE — 750 CE</div>
+      <div class="gold-divider"><div class="diamond"></div></div>
+      <div class="caliphate-meta">
+        <div class="meta-item"><span class="meta-label">Founder</span><span class="meta-value">Muawiyah ibn Abi Sufyan</span></div>
+        <div class="meta-item"><span class="meta-label">Capital</span><span class="meta-value">Damascus</span></div>
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">89 Years</span></div>
+        <div class="meta-item"><span class="meta-label">Caliphs</span><span class="meta-value">14</span></div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🗺️</div>
+          <div class="card-title">Territorial Expansion</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>At its peak, the Umayyad Caliphate was the largest empire in history at that time, stretching from the Iberian Peninsula (Al-Andalus) and North Africa in the west to Sindh and Central Asia in the east — over 5.79 million square miles.</p>
+          <ul>
+            <li>Conquest of North Africa (670–710 CE)</li>
+            <li>Conquest of Hispania/Al-Andalus (711 CE)</li>
+            <li>Expansion into Central Asia and Sindh (711–715 CE)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🕌</div>
+          <div class="card-title">Architecture & Culture</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <div>
+            <span class="achievement-tag">Dome of the Rock (691 CE)</span>
+            <span class="achievement-tag">Al-Aqsa Mosque</span>
+            <span class="achievement-tag">Umayyad Mosque, Damascus</span>
+            <span class="achievement-tag">Arabic Coinage</span>
+            <span class="achievement-tag">Postal System</span>
+          </div>
+          <p style="margin-top:0.8rem">Abd al-Malik ibn Marwan standardized Arabic as the official language and introduced the first purely Islamic currency, replacing Byzantine and Sassanid coins.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">⚔️</div>
+          <div class="card-title">Key Battles</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Battle of Tours/Poitiers (732 CE)</strong> — Halted expansion into Western Europe</li>
+            <li><strong>Siege of Constantinople (674–678 CE)</strong> — First attempt against Byzantium</li>
+            <li><strong>Battle of the Zab (750 CE)</strong> — Final defeat to Abbasid forces</li>
+            <li><strong>Conquest of Sindh (712 CE)</strong> — Muhammad ibn Qasim's campaign</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">📉</div>
+          <div class="card-title">Reason for Decline</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>The Umayyad dynasty faced growing resentment due to discrimination against non-Arab Muslims (Mawali), heavy taxation, and perceived corruption. The Abbasid Revolution (747–750 CE), supported by Persians, Iraqis, and other non-Arabs, overthrew the Umayyad dynasty. Only one prince, Abd al-Rahman I, escaped to establish a separate Umayyad emirate in Al-Andalus.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABBASID CALIPHATE ============ -->
+<section id="abbasid" class="caliphate-section">
+  <div class="container">
+    <div class="caliphate-header reveal">
+      <div class="caliphate-era">Third Caliphate · The Golden Age</div>
+      <h2 class="caliphate-title">The <span class="gold">Abbasid</span> Caliphate</h2>
+      <div class="caliphate-dates">750 CE — 1258 CE</div>
+      <div class="gold-divider"><div class="diamond"></div></div>
+      <div class="caliphate-meta">
+        <div class="meta-item"><span class="meta-label">Founder</span><span class="meta-value">As-Saffah (Abu al-Abbas)</span></div>
+        <div class="meta-item"><span class="meta-label">Capital</span><span class="meta-value">Baghdad</span></div>
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">508 Years</span></div>
+        <div class="meta-item"><span class="meta-label">Caliphs</span><span class="meta-value">37+</span></div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🏙️</div>
+          <div class="card-title">The City of Baghdad</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>Caliph al-Mansur founded Baghdad in 762 CE as a perfectly circular "City of Peace" (Madinat al-Salam). Within decades it became the world's largest city with over 1 million inhabitants. As the center of the known world, it attracted scholars, merchants, and artists from every civilization.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">📚</div>
+          <div class="card-title">Golden Age of Knowledge</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <div>
+            <span class="achievement-tag">House of Wisdom</span>
+            <span class="achievement-tag">Algebra Invented</span>
+            <span class="achievement-tag">Optics Science</span>
+            <span class="achievement-tag">Medical Canon</span>
+            <span class="achievement-tag">World Maps</span>
+            <span class="achievement-tag">Paper Production</span>
+          </div>
+          <p style="margin-top:0.8rem">Harun al-Rashid and Al-Ma'mun funded the translation of Greek, Persian, and Indian works into Arabic, then built upon them to create entirely new fields of science.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🌍</div>
+          <div class="card-title">Trade & Economics</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>The Abbasids controlled the Silk Road and Indian Ocean trade networks. They invented the first banking system, letters of credit (Sakk — the origin of "cheque"), and double-entry bookkeeping. Baghdad's markets traded spices from Indonesia, silk from China, gold from Africa, and furs from Russia.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">☄️</div>
+          <div class="card-title">Mongol Invasion & Decline</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>In 1258 CE, Hulagu Khan's Mongol forces sacked Baghdad, killing the last Caliph Al-Musta'sim and reportedly filling the Tigris River with the ink of destroyed books. This catastrophic event ended the Abbasid Caliphate and is considered one of history's greatest civilizational losses. Centuries of accumulated knowledge were destroyed in days.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ OTTOMAN EMPIRE ============ -->
+<section id="ottoman" class="caliphate-section" style="background:linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+  <div class="container">
+    <div class="caliphate-header reveal">
+      <div class="caliphate-era">The Great Sultanate · Last Caliphate</div>
+      <h2 class="caliphate-title">The <span class="gold">Ottoman</span> Empire</h2>
+      <div class="caliphate-dates">1299 CE — 1922 CE</div>
+      <div class="gold-divider"><div class="diamond"></div></div>
+      <div class="caliphate-meta">
+        <div class="meta-item"><span class="meta-label">Founder</span><span class="meta-value">Osman I</span></div>
+        <div class="meta-item"><span class="meta-label">Capital</span><span class="meta-value">Constantinople (Istanbul)</span></div>
+        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">623 Years</span></div>
+        <div class="meta-item"><span class="meta-label">Peak Area</span><span class="meta-value">5.2 Million km²</span></div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🏰</div>
+          <div class="card-title">Fall of Constantinople (1453)</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>Sultan Mehmed II, aged just 21, fulfilled the prophecy of the Prophet ﷺ when he conquered Constantinople on May 29, 1453. He ordered that no civilians be harmed, converted the Hagia Sophia into a mosque, and declared himself Caesar of Rome. This single event ended the Middle Ages and began the Renaissance.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🌊</div>
+          <div class="card-title">Naval Power & Expansion</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Battle of Lepanto (1571)</strong> — Naval confrontation with European powers</li>
+            <li><strong>Siege of Vienna (1683)</strong> — High watermark of Ottoman expansion into Europe</li>
+            <li>Control of the Black Sea, Red Sea, and Eastern Mediterranean</li>
+            <li>Suzerainty over Mecca, Medina, Jerusalem, Baghdad, Cairo, and Algiers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">Arts, Architecture & Law</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <div>
+            <span class="achievement-tag">Topkapi Palace</span>
+            <span class="achievement-tag">Hagia Sophia Mosque</span>
+            <span class="achievement-tag">Suleymaniye Mosque</span>
+            <span class="achievement-tag">Ottoman Miniature Art</span>
+            <span class="achievement-tag">Kanun Legal Code</span>
+          </div>
+          <p style="margin-top:0.8rem">Suleiman the Magnificent — Kanuni (The Lawgiver) — codified Ottoman law, patronized the arts, and oversaw the empire's architectural peak under the genius architect Mimar Sinan.</p>
+        </div>
+      </div>
+
+      <div class="expand-card reveal" data-card>
+        <div class="card-header">
+          <div class="card-icon">📉</div>
+          <div class="card-title">Decline & Abolition</div>
+          <div class="card-toggle">+</div>
+        </div>
+        <div class="card-body">
+          <p>European industrialization, nationalist movements, military defeats, and colonial pressure eroded Ottoman power through the 18th–20th centuries. After World War I, Allied forces occupied Istanbul. Mustafa Kemal Atatürk's nationalist revolution formally abolished the Sultanate in 1922 and the Caliphate in 1924, ending 1,300 years of continuous Islamic governance.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ISLAMIC GOLDEN AGE ============ -->
+<section id="golden-age">
+  <div class="container">
+    <div class="section-label">8th — 14th Century</div>
+    <h2 class="section-title reveal">The <span class="gold">Golden Age</span> of Islam</h2>
+    <p class="section-subtitle reveal">When Baghdad illuminated the world's darkness and Muslim scholars preserved, translated, and advanced the sum total of human knowledge</p>
+
+    <div class="golden-intro">
+      <div class="house-wisdom reveal-left">
+        <div class="title">Bayt al-Hikma</div>
+        <div class="subtitle">بيت الحكمة</div>
+        <p>The House of Wisdom, founded in Baghdad under Caliph Harun al-Rashid and expanded by Al-Ma'mun, was the world's greatest intellectual institution — a library, translation bureau, and research center that employed scholars of every faith and nationality.</p>
+      </div>
+      <div class="achievements-text reveal-right">
+        <h3>A Renaissance Before the Renaissance</h3>
+        <p>While Europe endured the Dark Ages, Muslim scholars in Baghdad, Cordoba, Cairo, and Samarkand were mapping the stars, performing surgery, cracking the code of light, and laying the mathematical foundations upon which all modern science rests.</p>
+        <p>They did not merely preserve Greek and Indian knowledge — they built upon it, corrected its errors, and created entire new disciplines. The word "algebra" comes from al-jabr. The word "algorithm" from al-Khwarizmi. The word "zero" from the Arabic sifr.</p>
+        <p>From the 8th to the 14th century, Arabic was the language of science — just as English is today.</p>
+      </div>
+    </div>
+
+    <!-- Science Categories -->
+    <div class="science-categories">
+      <div class="science-cat reveal">
+        <div class="cat-icon">🔢</div>
+        <h4>Mathematics</h4>
+        <p>Al-Khwarizmi invented Algebra. Al-Kindi pioneered cryptanalysis. Ibn al-Haytham applied geometry to optics. Muslim mathematicians introduced Hindu-Arabic numerals to Europe.</p>
+      </div>
+      <div class="science-cat reveal">
+        <div class="cat-icon">🌌</div>
+        <h4>Astronomy</h4>
+        <p>Al-Battani calculated the Earth's axial tilt. Ibn al-Shatir's planetary models preceded Copernicus. The astrolabe was perfected for navigation and time-keeping.</p>
+      </div>
+      <div class="science-cat reveal">
+        <div class="cat-icon">⚕️</div>
+        <h4>Medicine</h4>
+        <p>Ibn Sina's Canon of Medicine was Europe's medical textbook for 600 years. Al-Zahrawi invented 200 surgical instruments still in use today. Al-Razi diagnosed smallpox.</p>
+      </div>
+    </div>
+
+    <!-- Scholars Grid -->
+    <h3 style="font-family:var(--font-heading);color:var(--gold);text-align:center;font-size:1rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:2rem;">Luminaries of the Age</h3>
+
+    <div class="scholars-grid">
+
+      <div class="scholar-card reveal">
+        <div class="scholar-icon">🔬</div>
+        <div class="scholar-name">Ibn al-Haytham</div>
+        <div class="scholar-field">Father of Optics</div>
+        <p class="scholar-desc">965–1040 CE. Wrote the Book of Optics, discovering that vision works by light entering the eye — not by the eye emitting light. The first true experimental scientist.</p>
+      </div>
+
+      <div class="scholar-card reveal">
+        <div class="scholar-icon">📐</div>
+        <div class="scholar-name">Al-Khwarizmi</div>
+        <div class="scholar-field">Father of Algebra</div>
+        <p class="scholar-desc">780–850 CE. His treatise "Al-Kitab al-mukhtasar fi hisab al-jabr" gave the world algebra. His name became "algorithm." He revolutionized mathematics forever.</p>
+      </div>
+
+      <div class="scholar-card reveal">
+        <div class="scholar-icon">📖</div>
+        <div class="scholar-name">Ibn Sina (Avicenna)</div>
+        <div class="scholar-field">Prince of Physicians</div>
+        <p class="scholar-desc">980–1037 CE. His Canon of Medicine systematized all medical knowledge and remained Europe's primary medical textbook until the 17th century — 600+ years.</p>
+      </div>
+
+      <div class="scholar-card reveal">
+        <div class="scholar-icon">🌍</div>
+        <div class="scholar-name">Al-Idrisi</div>
+        <div class="scholar-field">Master Cartographer</div>
+        <p class="scholar-desc">1100–1165 CE. Created the most accurate map of the world for 300 years. His Tabula Rogeriana mapped Europe, Asia, and Africa with remarkable precision.</p>
+      </div>
+
+      <div class="scholar-card reveal">
+        <div class="scholar-icon">⚗️</div>
+        <div class="scholar-name">Jabir ibn Hayyan</div>
+        <div class="scholar-field">Father of Chemistry</div>
+        <p class="scholar-desc">721–815 CE. Developed systematic experimentation in alchemy, discovering sulfuric and nitric acids. His name gave us "gibberish" — for his encoded scientific writings.</p>
+      </div>
+
+      <div class="scholar-card reveal">
+        <div class="scholar-icon">🌙</div>
+        <div class="scholar-name">Al-Battani</div>
+        <div class="scholar-field">Master Astronomer</div>
+        <p class="scholar-desc">858–929 CE. Calculated the solar year to 365 days, 5 hours, 46 minutes, 24 seconds — off by under 3 minutes. His astronomical tables were used by Copernicus and Galileo.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEADERS SECTION ============ -->
+<section id="leaders">
+  <div class="container">
+    <div class="section-label">The Architects of Empire</div>
+    <h2 class="section-title reveal">Greatest <span class="gold">Muslim Leaders</span></h2>
+    <p class="section-subtitle reveal">Hover over each card to discover the legacy of those who shaped the destiny of civilizations</p>
+
+    <div class="leaders-grid">
+
+      <!-- Umar ibn Al-Khattab -->
+      <div class="leader-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="leader-card-inner">
+          <div class="leader-front">
+            <div class="leader-img-placeholder">👑</div>
+            <div class="leader-front-info">
+              <div class="leader-name">Umar ibn Al-Khattab</div>
+              <div class="leader-title-text">2nd Caliph · Al-Farooq</div>
+              <div class="leader-era">634 — 644 CE</div>
+            </div>
+            <div class="flip-hint">Hover to learn more →</div>
+          </div>
+          <div class="leader-back">
+            <h3>Umar ibn Al-Khattab</h3>
+            <div class="leader-title-text">The Distinguisher of Truth & Falsehood</div>
+            <p>Perhaps the greatest statesman in Islamic history. Under Umar's 10-year rule, the Islamic empire doubled in size. His entry into Jerusalem — riding a donkey while his servant rode the camel — exemplified his legendary humility.</p>
+            <div class="leader-achievement">Founded the first welfare state in history</div>
+            <div class="leader-achievement">Established the Islamic calendar (Hijri)</div>
+            <div class="leader-achievement">Conquered Persia, Syria, and Egypt</div>
+            <div class="leader-achievement">Introduced the concept of Bayt al-Mal (Treasury)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Salahuddin Ayyubi -->
+      <div class="leader-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="leader-card-inner">
+          <div class="leader-front">
+            <div class="leader-img-placeholder">⚔️</div>
+            <div class="leader-front-info">
+              <div class="leader-name">Salahuddin Ayyubi</div>
+              <div class="leader-title-text">Sultan · Liberator of Jerusalem</div>
+              <div class="leader-era">1174 — 1193 CE</div>
+            </div>
+            <div class="flip-hint">Hover to learn more →</div>
+          </div>
+          <div class="leader-back">
+            <h3>Salahuddin Ayyubi</h3>
+            <div class="leader-title-text">Saladin — Lion of Islam</div>
+            <p>The Kurdish-Muslim Sultan who united a fractured Muslim world and recaptured Jerusalem in 1187 CE after 88 years of Crusader rule. His chivalry was so legendary that even his enemies — including Richard the Lionheart — admired him.</p>
+            <div class="leader-achievement">Recaptured Jerusalem (1187 CE)</div>
+            <div class="leader-achievement">Founded the Ayyubid Dynasty</div>
+            <div class="leader-achievement">Defeated the Crusaders at Hattin</div>
+            <div class="leader-achievement">Sent his own physician to nurse a sick enemy king</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mehmed II -->
+      <div class="leader-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="leader-card-inner">
+          <div class="leader-front">
+            <div class="leader-img-placeholder">🏰</div>
+            <div class="leader-front-info">
+              <div class="leader-name">Mehmed II</div>
+              <div class="leader-title-text">Ottoman Sultan · Al-Fatih</div>
+              <div class="leader-era">1451 — 1481 CE</div>
+            </div>
+            <div class="flip-hint">Hover to learn more →</div>
+          </div>
+          <div class="leader-back">
+            <h3>Sultan Mehmed II</h3>
+            <div class="leader-title-text">Al-Fatih — The Conqueror</div>
+            <p>At 21 years old, Mehmed II fulfilled an 800-year-old prophecy by conquering Constantinople. He spoke 6 languages, was a poet and philosopher, and immediately upon entering the city, guaranteed the safety of all civilians regardless of religion.</p>
+            <div class="leader-achievement">Conquered Constantinople at age 21 (1453)</div>
+            <div class="leader-achievement">Built Topkapi Palace and restored Hagia Sophia</div>
+            <div class="leader-achievement">United Anatolia and the Balkans</div>
+            <div class="leader-achievement">Commissioned the world's first comprehensive atlas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Harun al-Rashid -->
+      <div class="leader-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="leader-card-inner">
+          <div class="leader-front">
+            <div class="leader-img-placeholder">📚</div>
+            <div class="leader-front-info">
+              <div class="leader-name">Harun al-Rashid</div>
+              <div class="leader-title-text">5th Abbasid Caliph</div>
+              <div class="leader-era">786 — 809 CE</div>
+            </div>
+            <div class="flip-hint">Hover to learn more →</div>
+          </div>
+          <div class="leader-back">
+            <h3>Harun al-Rashid</h3>
+            <div class="leader-title-text">The Just — Patron of the Golden Age</div>
+            <p>Under Harun's reign, Baghdad became the world's most magnificent city. He exchanged diplomatic gifts with Charlemagne, patronized poets and scholars, and personally walked Baghdad's streets in disguise to hear the people's concerns — a practice immortalized in 1001 Nights.</p>
+            <div class="leader-achievement">Established the House of Wisdom in Baghdad</div>
+            <div class="leader-achievement">Corresponded diplomatically with Charlemagne</div>
+            <div class="leader-achievement">Baghdad reached 1 million inhabitants</div>
+            <div class="leader-achievement">Patronized the greatest scholars of the age</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BATTLES SECTION ============ -->
+<section id="battles">
+  <div class="container">
+    <div class="section-label">The Defining Conflicts</div>
+    <h2 class="section-title reveal">Major <span class="gold">Battles & Wars</span></h2>
+    <p class="section-subtitle reveal">The battles that shaped the course of Islamic civilization and the fate of empires</p>
+
+    <div class="battle-slider reveal">
+      <div class="battle-track" id="battle-track">
+
+        <!-- Battle 1 -->
+        <div class="battle-slide">
+          <div class="battle-card">
+            <div>
+              <div class="battle-year">624</div>
+              <h3 class="battle-name">Battle of Badr</h3>
+              <p class="battle-desc">The first major battle of Islam. 313 poorly-equipped Muslims faced a Qurayshi army of 1,000. Against all military logic, the Muslims triumphed — a victory that the Quran directly addressed and which established Islam as a political and military force. It was a turning point that transformed a persecuted community into an emerging power.</p>
+              <div class="battle-outcome">Islamic Victory</div>
+            </div>
+            <div class="battle-stats">
+              <div class="stat-box">
+                <span class="stat-num">313</span>
+                <span class="stat-label">Muslim Forces</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">~1,000</span>
+                <span class="stat-label">Quraysh Forces</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">14</span>
+                <span class="stat-label">Muslim Martyrs</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">70</span>
+                <span class="stat-label">Enemy Captives</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battle 2 -->
+        <div class="battle-slide">
+          <div class="battle-card">
+            <div>
+              <div class="battle-year">636</div>
+              <h3 class="battle-name">Battle of Yarmouk</h3>
+              <p class="battle-desc">One of history's most decisive battles. The Muslim Arab forces under Khalid ibn al-Walid — the "Sword of Allah" — defeated the mighty Byzantine army in modern-day Syria. This single battle ended 700 years of Roman/Byzantine rule over the Levant and opened the doors to the eventual Muslim liberation of Jerusalem. Khalid's tactical genius is studied in military academies to this day.</p>
+              <div class="battle-outcome">Islamic Victory</div>
+            </div>
+            <div class="battle-stats">
+              <div class="stat-box">
+                <span class="stat-num">25,000</span>
+                <span class="stat-label">Muslim Forces</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">~100,000</span>
+                <span class="stat-label">Byzantine Forces</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">6 Days</span>
+                <span class="stat-label">Duration</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">Levant</span>
+                <span class="stat-label">Territory Gained</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battle 3 -->
+        <div class="battle-slide">
+          <div class="battle-card">
+            <div>
+              <div class="battle-year">1453</div>
+              <h3 class="battle-name">Siege of Constantinople</h3>
+              <p class="battle-desc">The culmination of 800 years of prophecy. 21-year-old Sultan Mehmed II besieged the "impregnable" city with 80,000 troops and revolutionary bronze cannon technology. He even transported 70 ships overland to bypass the harbor chain. On May 29, 1453, the 1,100-year-old Byzantine Empire ended. Church bells rang in mourning across Europe. A new age had begun.</p>
+              <div class="battle-outcome">Ottoman Victory</div>
+            </div>
+            <div class="battle-stats">
+              <div class="stat-box">
+                <span class="stat-num">80,000</span>
+                <span class="stat-label">Ottoman Forces</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">~7,000</span>
+                <span class="stat-label">Byzantine Defenders</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">53 Days</span>
+                <span class="stat-label">Siege Duration</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">1,100+</span>
+                <span class="stat-label">Years of Byzantium Ended</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battle 4: Crusades -->
+        <div class="battle-slide">
+          <div class="battle-card">
+            <div>
+              <div class="battle-year">1187</div>
+              <h3 class="battle-name">Battle of Hattin & The Crusades</h3>
+              <p class="battle-desc">The Crusades (1095–1291 CE) were 200 years of religious wars as European forces attempted to control the Holy Land. Salahuddin Ayyubi's decisive victory at the Battle of Hattin on July 4, 1187 shattered the Crusader Kingdom. He then recaptured Jerusalem, treating its Christian inhabitants with remarkable mercy — in stark contrast to the 1099 massacre by Crusaders. His conduct became the benchmark of chivalry in both East and West.</p>
+              <div class="battle-outcome">Islamic Victory — Jerusalem Liberated</div>
+            </div>
+            <div class="battle-stats">
+              <div class="stat-box">
+                <span class="stat-num">1095</span>
+                <span class="stat-label">First Crusade Began</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">1187</span>
+                <span class="stat-label">Jerusalem Recaptured</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">200</span>
+                <span class="stat-label">Years of Crusades</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">Saladin</span>
+                <span class="stat-label">The Liberator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="slider-controls">
+        <button class="slider-btn" id="prev-battle">&#8592;</button>
+        <div class="slider-dots" id="battle-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <button class="slider-btn" id="next-battle">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DECLINE SECTION ============ -->
+<section id="decline">
+  <div class="container">
+    <div class="section-label">The Twilight of Empires</div>
+    <h2 class="section-title reveal">The <span class="gold">Decline</span> of the Caliphates</h2>
+    <p class="section-subtitle reveal">The forces — internal and external — that brought a thousand years of Islamic power to its end</p>
+
+    <div class="decline-grid">
+
+      <div class="decline-card reveal">
+        <div class="decline-icon">⚡</div>
+        <h4>The Mongol Catastrophe</h4>
+        <p>In 1258 CE, Hulagu Khan's Mongol hordes sacked Baghdad, killing up to 1 million people including Caliph Al-Musta'sim. The greatest library in the world — the House of Wisdom — was destroyed. The Tigris ran black with ink for days. This single event ended the Golden Age and caused an intellectual regression from which the Muslim world never fully recovered.</p>
+      </div>
+
+      <div class="decline-card reveal">
+        <div class="decline-icon">⚔️</div>
+        <h4>The Crusader Period</h4>
+        <p>Two centuries of Crusader wars (1095–1291 CE) drained resources, destabilized trade routes, and created lasting religious hostilities. While Muslims ultimately expelled the Crusaders, the prolonged conflict weakened the fabric of Islamic civilization, particularly in the Levant and Egypt, at a critical period when the Mongol threat was building from the East.</p>
+      </div>
+
+      <div class="decline-card reveal">
+        <div class="decline-icon">🔥</div>
+        <h4>Internal Conflicts & Fragmentation</h4>
+        <p>Dynastic succession conflicts, sectarian tensions, and the rise of independent sultanates fragmented what was once a unified civilization. The Seljuk, Fatimid, and Buyid dynasties each carved out territories from the Abbasid Caliphate, reducing the Caliph to a figurehead long before the Mongols arrived.</p>
+      </div>
+
+      <div class="decline-card reveal">
+        <div class="decline-icon">🌊</div>
+        <h4>European Colonialism</h4>
+        <p>The 18th and 19th centuries saw European powers — Britain, France, Russia — systematically dismantle Ottoman territory. Napoleon's Egypt campaign (1798), the Greek War of Independence, and the Balkan Wars all carved away Ottoman land. By WWI, the empire was reduced to a shell, with colonial powers drawing new borders that still cause conflicts today.</p>
+      </div>
+
+      <div class="decline-card reveal">
+        <div class="decline-icon">📜</div>
+        <h4>Abolition of the Caliphate (1924)</h4>
+        <p>On March 3, 1924, the Turkish Grand National Assembly formally abolished the Ottoman Caliphate under Mustafa Kemal Atatürk's secular nationalist program. The last Caliph, Abdulmecid II, was sent into exile. This ended an institution that had, in some form, existed since the death of the Prophet ﷺ — a symbolic rupture that Muslims worldwide still feel today.</p>
+      </div>
+
+      <div class="decline-card reveal">
+        <div class="decline-icon">🔬</div>
+        <h4>Intellectual Stagnation</h4>
+        <p>The closure of the doors of ijtihad (independent reasoning), the rejection of the printing press for nearly 300 years after its European invention, and a general turn away from empirical inquiry allowed Europe to technologically surpass the Muslim world. The very traditions of inquiry that had made the Golden Age possible were gradually abandoned.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HORIZONTAL TIMELINE ============ -->
+<section id="timeline-section">
+  <h2 class="htimeline-title">610 <span style="color:var(--gold)">—</span> 1924</h2>
+  <p class="htimeline-subtitle">Scroll through fourteen centuries of Islamic history</p>
+
+  <div class="htimeline-scroll">
+    <div class="htimeline-track" id="htimeline">
+
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">610 CE</span><span class="ht-label">First Revelation</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">622 CE</span><span class="ht-label">The Hijra</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">630 CE</span><span class="ht-label">Conquest of Mecca</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">632 CE</span><span class="ht-label">Rashidun Caliphate</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">636 CE</span><span class="ht-label">Battle of Yarmouk</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">638 CE</span><span class="ht-label">Jerusalem Opened</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">661 CE</span><span class="ht-label">Umayyad Caliphate</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">691 CE</span><span class="ht-label">Dome of the Rock</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">711 CE</span><span class="ht-label">Al-Andalus Conquered</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">750 CE</span><span class="ht-label">Abbasid Revolution</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">762 CE</span><span class="ht-label">Baghdad Founded</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">786 CE</span><span class="ht-label">Harun al-Rashid</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">830 CE</span><span class="ht-label">House of Wisdom</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">1095 CE</span><span class="ht-label">First Crusade</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">1187 CE</span><span class="ht-label">Saladin — Jerusalem</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">1258 CE</span><span class="ht-label">Mongols Sack Baghdad</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">1299 CE</span><span class="ht-label">Ottoman Empire Begins</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">1453 CE</span><span class="ht-label">Constantinople Falls</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">1520 CE</span><span class="ht-label">Suleiman the Magnificent</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">1683 CE</span><span class="ht-label">Siege of Vienna</span></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-content"><span class="ht-year">1798 CE</span><span class="ht-label">Napoleon's Egypt</span></div>
+        <div class="ht-connector"></div>
+        <div class="ht-dot"></div>
+      </div>
+      <div class="ht-event">
+        <div class="ht-dot"></div>
+        <div class="ht-connector"></div>
+        <div class="ht-content"><span class="ht-year">1924 CE</span><span class="ht-label">Caliphate Abolished</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY SECTION ============ -->
+<!-- <section id="gallery">
+  <div class="container">
+    <div class="section-label">Islamic Art & Architecture</div>
+    <h2 class="section-title reveal">The <span class="gold">Gallery</span></h2>
+    <p class="section-subtitle reveal">The visual testament to Islamic civilization's genius — from towering minarets to intricate calligraphy</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item reveal">
+        <div class="gallery-img" style="background:linear-gradient(135deg, #0d2818 0%, #1a4a2e 50%, #0a1a10 100%);">
+          🕌
+          <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            Hagia Sophia — Istanbul
+            <span>Ottoman Architecture · 1453 CE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-img" style="background:linear-gradient(135deg, #1a3020 0%, #0d2020 100%);">☪️</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            Islamic Calligraphy
+            <span>The Art of the Divine Word</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-img" style="background:linear-gradient(135deg, #20180a 0%, #3a2a0a 100%);">⭐</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            Geometric Patterns
+            <span>Mathematical Perfection in Art</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-img" style="background:linear-gradient(135deg, #0a1a20 0%, #0d2818 100%);">🌙</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            Dome of the Rock
+            <span>Jerusalem · 691 CE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-img" style="background:linear-gradient(135deg, #15100a 0%, #2a200a 100%);">🏛️</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            Alhambra Palace
+            <span>Granada, Al-Andalus</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <div class="gallery-img" style="background:linear-gradient(135deg, #0d1820 0%, #081510 100%);">📜</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            Ancient Manuscripts
+            <span>House of Wisdom · Baghdad</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo reveal">Rise of the Crescent</div>
+    <div class="footer-tagline reveal">From Revelation to Empire — The Legacy of Islamic Civilization</div>
+
+    <div class="gold-divider reveal"><div class="diamond"></div></div>
+
+    <div class="footer-quote reveal">
+      <p>"Indeed, Allah will not change the condition of a people until they change what is in themselves."</p>
+      <cite>Qur'an 13:11 — Surah Ar-Ra'd</cite>
+    </div>
+
+    <!-- <nav class="footer-nav reveal">
+      <a href="#intro">Origins</a>
+      <a href="#rashidun">Rashidun</a>
+      <a href="#umayyad">Umayyad</a>
+      <a href="#abbasid">Abbasid</a>
+      <a href="#ottoman">Ottoman</a>
+      <a href="#golden-age">Golden Age</a>
+      <a href="#leaders">Leaders</a>
+      <a href="#battles">Battles</a>
+      <a href="#decline">Decline</a>
+      <a href="#timeline-section">Timeline</a>
+      <a href="#gallery">Gallery</a>
+    </nav> -->
+
+    <div class="footer-bottom reveal">
+      <p style="font-family:var(--font-arabic);font-size:1.5rem;color:var(--gold);margin-bottom:0.5rem;letter-spacing:0.1em;">الحمد لله</p>
+      <p>© Rise of the Crescent · An Educational Journey Through Islamic History · Built with reverence</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+// ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+const progressBar = document.getElementById('scroll-progress');
+
+function updateProgress() {
+  const winScroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (winScroll / height) * 100;
+  progressBar.style.width = progress + '%';
+}
+
+// ============================================
+// NAVIGATION SCROLL EFFECT
+// ============================================
+const mainNav = document.getElementById('main-nav');
+
+function updateNav() {
+  if (window.scrollY > 50) {
+    mainNav.classList.add('scrolled');
+  } else {
+    mainNav.classList.remove('scrolled');
+  }
+}
+
+// ============================================
+// HERO STARS
+// ============================================
+function generateStars() {
+  const container = document.getElementById('stars-container');
+  const count = 120;
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    const x = Math.random() * 100;
+    const y = Math.random() * 80;
+    const size = Math.random() * 2.5 + 0.5;
+    const dur = (Math.random() * 4 + 2).toFixed(1);
+    const delay = (Math.random() * 5).toFixed(1);
+    const opacity = (Math.random() * 0.5 + 0.2).toFixed(1);
+    star.style.cssText = `left:${x}%;top:${y}%;width:${size}px;height:${size}px;--dur:${dur}s;--delay:${delay}s;--opacity:${opacity}`;
+    container.appendChild(star);
+  }
+}
+
+generateStars();
+
+// ============================================
+// SCROLL REVEAL ANIMATION
+// ============================================
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .timeline-item');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, entry.target.dataset.delay || 0);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealEls.forEach((el, i) => {
+  // Stagger delays for grids
+  if (el.closest('.cards-grid') || el.closest('.scholars-grid') || el.closest('.leaders-grid') || el.closest('.decline-grid') || el.closest('.science-categories')) {
+    const siblings = el.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const index = Array.from(siblings).indexOf(el);
+    el.dataset.delay = index * 100;
+  }
+  revealObserver.observe(el);
+});
+
+// ============================================
+// EXPANDABLE CARDS
+// ============================================
+document.querySelectorAll('[data-card]').forEach(card => {
+  card.addEventListener('click', function() {
+    const body = this.querySelector('.card-body');
+    const isOpen = this.classList.contains('open');
+
+    // Close all others in same grid
+    const siblings = this.closest('.cards-grid').querySelectorAll('[data-card]');
+    siblings.forEach(s => {
+      s.classList.remove('open');
+      s.querySelector('.card-body').classList.remove('open');
+    });
+
+    if (!isOpen) {
+      this.classList.add('open');
+      body.classList.add('open');
+    }
+  });
+});
+
+// ============================================
+// BATTLE SLIDER
+// ============================================
+let currentSlide = 0;
+const totalSlides = 4;
+const battleTrack = document.getElementById('battle-track');
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(n) {
+  currentSlide = (n + totalSlides) % totalSlides;
+  battleTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+
+document.getElementById('next-battle').addEventListener('click', () => goToSlide(currentSlide + 1));
+document.getElementById('prev-battle').addEventListener('click', () => goToSlide(currentSlide - 1));
+
+dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+
+// Auto-advance slider
+setInterval(() => goToSlide(currentSlide + 1), 6000);
+
+// ============================================
+// DARK/LIGHT TOGGLE
+// ============================================
+let isLight = false;
+document.getElementById('dark-toggle').addEventListener('click', function() {
+  isLight = !isLight;
+  document.body.classList.toggle('light-mode', isLight);
+  this.textContent = isLight ? '◑ Dark' : '◐ Theme';
+});
+
+// ============================================
+// MOBILE NAV
+// ============================================
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobile-nav').classList.add('open');
+});
+
+document.getElementById('mobile-close').addEventListener('click', () => {
+  document.getElementById('mobile-nav').classList.remove('open');
+});
+
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+}
+
+// ============================================
+// PARALLAX EFFECT
+// ============================================
+function handleParallax() {
+  const scrollY = window.scrollY;
+  const hero = document.getElementById('hero');
+  if (hero) {
+    const heroContent = hero.querySelector('.hero-content');
+    if (heroContent) {
+      heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+      heroContent.style.opacity = 1 - scrollY / 600;
+    }
+  }
+}
+
+// ============================================
+// COMBINED SCROLL HANDLER
+// ============================================
+window.addEventListener('scroll', () => {
+  updateProgress();
+  updateNav();
+  handleParallax();
+}, { passive: true });
+
+// ============================================
+// SMOOTH SCROLL FOR ALL ANCHOR LINKS
+// ============================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ============================================
+// LAZY LOAD PLACEHOLDER IMAGES
+// ============================================
+// If real images were present, IntersectionObserver would load them
+// Currently using emoji/CSS placeholders
+
+// ============================================
+// INITIAL CALLS
+// ============================================
+updateNav();
+updateProgress();
+
+// Open first card in each grid by default after a delay
+setTimeout(() => {
+  document.querySelectorAll('.cards-grid').forEach(grid => {
+    const firstCard = grid.querySelector('[data-card]');
+    if (firstCard) {
+      firstCard.classList.add('open');
+      firstCard.querySelector('.card-body').classList.add('open');
+    }
+  });
+}, 800);
+
+</script>
+</body>
+</html>
